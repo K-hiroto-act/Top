@@ -1,0 +1,409 @@
+@charset "utf-8";
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700);
+
+$red: #fd7473;
+$yellow: #fec951;
+$blue: #47b8e0;
+$purp: #9f68d0;
+$bg: rgba(0,0,0,.5);
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+
+html {
+    letter-spacing: 0.1px;
+}
+
+header {
+    box-sizing: border-box;
+    background: white;
+    width: 100%;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 50px 0 50px;
+    position: fixed;
+    //margin-top: -150px;
+    z-index: 999;
+}
+
+.nav-menu {
+  visibility: unset;
+}
+
+.menu {
+    display: flex;
+    list-style: none;
+}
+.menu-item {
+    margin-right: 20px;
+}
+.menu-link {
+    text-decoration: none;
+    color: black;
+    display: block;
+    font-weight: 600;
+}
+
+.menu-link:hover {
+  opacity: 0.7;
+}
+
+.menu-trigger {
+  display: none;
+}
+
+.response-li {
+  display: none;
+  visibility: hidden;
+}
+
+.wrapper {
+  overflow: hidden;
+}
+
+.wrapper::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-image: url(img_profile/yakei.jpg);
+    background-position: center;
+    background-size: cover;
+    z-index: -1;
+}
+
+.page-up{
+  position:fixed;
+  bottom:20px;
+  right:20px;
+  z-index: 100;
+  & a{
+  display: table-cell;
+  vertical-align: middle;  
+  width: 70px;
+  height:70px;
+  background-color: black;
+  color: #fff;
+  font-size: 10px;
+  text-decoration: none;
+  text-align: center;  
+}
+}
+
+
+
+
+
+.page-top {
+    height: 700px;
+    width: 100%;
+}
+
+.page-top-wrap {
+    width: 80%;
+    height: 70%;
+    margin: 150px auto;
+    text-align: center;
+    display: block;
+    background-color: rgba(146, 45, 45, .3);
+    opacity: 0;
+    transform: translateY(100px);
+}
+
+.page-top-wrap h2 {
+    font-family: 'Archivo', sans-serif;
+    font-size: 50px;
+    padding-top: 150px;
+}
+
+.page-top-wrap h3 {
+    font-family: 'Archivo', sans-serif;
+    padding-top: 20px;
+}
+
+.page-top-wrap p a {
+    display: block;
+    padding-top: 20px;
+    margin: 50px auto;
+    height: 60px;
+    width: 200px;
+    background-color: black;
+    text-decoration: none;
+    color: white;
+    position: relative;
+    border: 2px solid #333;
+}
+
+.LD:hover {
+  color: #333;
+}
+
+.profile {
+    height: 700px;
+    width: 100%;
+    background: $bg;
+}
+
+.container {
+  height: 100px;
+  width: 100%;
+  background-color: grey;
+  text-align: center;
+}
+
+.container h2{
+  font-size: 40px;
+}
+
+.container h3 {
+  font-size: 25px;
+}
+
+.row {
+  display: flex;
+  width: 80%;
+  height: auto;
+  margin: 0 auto;
+  justify-content: space-around;
+  opacity: 0;
+  transform: translateY(100px);
+  img {
+    height: 300px;
+    width: 300px;
+    margin-top: 100px;
+  }
+  table {
+  height: 400px;
+  width: 500px;
+  border-collapse:collapse;
+  margin-top: 50px;
+  margin-left: 50px;
+  background-color: rgba(0,0,0,.3);
+  
+  tbody tr td{
+    border-bottom: 1px solid white;
+    padding: 10px;
+    color: white;
+    }
+  }
+}
+
+
+
+.skill {
+  height: 850px;
+  width: 100%;
+  background: $bg
+}
+
+.skill ul {
+  display: flex;
+  list-style: none;
+  width: 1020px;
+  height: auto;
+  margin: 80px auto 0 auto;
+  flex-wrap: wrap;
+  //background-color: blue;
+}
+
+.skill ul li {
+  height: 100px;
+  width: 500px;
+  //background-color: violet;
+  border: 1px solid white;
+  display: flex;
+  opacity: 0;
+  transform: translateY(100px);
+}
+
+.skill ul li:nth-child(2n) {
+  margin-left: 14px;
+}
+
+.skill ul li:nth-child(n+1):nth-child(-n+6) {
+  margin-bottom: 50px;
+}
+
+.skill ul li  img {
+  height: 80px;
+  width: 80px;
+  padding: 10px;
+  margin-top: 10px;
+}
+
+.inner {
+  width: 100%;
+  & p {
+    color: white;
+    padding-top: 10px;
+    padding-left: 5px;
+  }
+}
+
+.bar {
+  position: relative;
+  width: 100%;
+  height: 48px; //グラフバーの枠外の高さ
+  background: rgba(255,255,255,0.1);
+  margin: 0.5rem 0;
+  border-radius: 5px;
+  .bar-info{
+    border-radius: 5px;
+    padding: 0.75rem;
+    background: $red;
+    color: white;
+    width: 10%;
+    position: relative;
+    height: 48px; //グラフバーの枠内の高さ
+    transition: width 3.3s ease-in-out;
+    .percent{
+      float: right;
+    }
+    &.html{
+      background: linear-gradient($red, #FC688E), $red;
+    }
+    &.css{
+      background: linear-gradient($yellow, #FCAD44), $yellow;
+    }
+    &.js{
+      background: linear-gradient($blue, #28BEFA), $blue;
+    }
+    &.ps{
+      background: linear-gradient($purp, #BB68D0), $purp;
+    }
+  }
+}
+
+.work {
+  height: 1200px;
+  width: 100%;
+  background: $bg;
+  .portfolio-main-wrap {
+    width: 80%;
+    height: auto;
+    //background-color: pink;
+    margin: 50px auto 0 auto;
+    display: flex;
+    opacity: 0;
+    transform: translateY(100px);
+    .main-wrap-left img{
+      width: 500px;
+      height: 400px;
+    }
+    .main-wrap-right {
+      height: 400px;
+      width: 500px;
+      //background-color: cadetblue;
+      margin-top: 50px;
+      & h2 {
+        font-weight: 500;
+        font-size: 40px;
+        color: white;
+      }
+      & p {
+        border-bottom: 1px solid white;
+        padding: 10px;
+        color: white;
+      }
+      & span {
+        font-size: 20px;
+      }
+      & a {
+        text-decoration: none;
+        padding-top: 20px;
+        display: inline-block;
+      }
+    }
+    }
+  
+}
+
+.portfolio-sub-wrap {
+  display: flex;
+  justify-content: space-around;
+  width: 80%;
+  height: auto;
+  margin: 100px auto 0 auto;
+  opacity: 0;
+  transform: translateY(100px);
+  //background-color: chartreuse;
+  & img {
+    height: 400px;
+    width: 300px;
+    display: block;
+  }
+}
+
+.contact {
+  height:  500px;
+  width: 100%;
+  background: $bg;
+  & p {
+    color: white;
+    margin-top: 80px;
+    font-size: 20px;
+    text-align: center;
+  }
+}
+
+.content {
+  height: 30vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  //background-color: chocolate;
+}
+
+.btn {
+  a {
+    display: block;
+    background-color: #fff;
+    border: solid 3px #cc1f00;
+    padding: 10px 50px;
+    text-decoration: none;
+    font-size: 32px;
+    color: #cc1f00;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+    transition: 0.2s linear;
+    &::after{
+      content: "";
+      position: absolute;
+      z-index: -1;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      transition: 0.2s linear;
+    }
+    &:hover{
+      color: #fff;
+      &::after{
+        left: 0;
+        background-color: #cc1f00;
+      }
+    }
+  }
+}
+
+footer {
+  background-color: grey;
+  height: 70px;
+  width: 100%;
+  & p {
+    margin: 0 auto;
+    display: block;
+    text-align: center;
+    padding-top: 25px;
+  }
+}
